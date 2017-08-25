@@ -19,6 +19,39 @@ exports.Formats = [
 		ruleset: ['PotD', 'Pokemon', 'Sleep Clause Mod', 'HP Percentage Mod', 'Cancel Mod'],
 	},
 	{
+	name: "[Gen 7] Specialness",
+	desc: [
+		"The Special Stat Returns! It is the highest of the special attack or Special Defense Stat. Stat Modifiers that affect either of the two stats will sync across stats",
+	],
+	mod: 'gen7',
+	ruleset: ['Pokemon', 'Standard', 'Team Preview'],
+	banlist: ['Baton Pass'],
+	onUpdate: function (pokemon) {
+		let specd = pokemon.stats.spd;
+		let speca = pokemon.stats.spa;
+		if (speca > specd) {
+			specd = speca;
+		} else {
+			speca = specd;
+		}
+	},
+	//now for boosts
+	onBoost: function (pokemon) {
+		if (pokemon.positiveBoosts(spa)) {
+			pokemon.positiveBoosts(spd) = (pokemon.positiveBoosts(spa);
+		}
+		if (pokemon.negativeBoosts(spa)) {
+			pokemon.negativeBoosts(spd) = (pokemon.negativeBoosts(spa);
+		}
+		if (pokemon.positiveBoosts(spd)) {
+			pokemon.positiveBoosts(spa) = (pokemon.positiveBoosts(spd);
+		}
+		if (pokemon.negativeBoosts(spa)) {
+			pokemon.negativeBoosts(spa) = (pokemon.negativeBoosts(spd);
+		}
+	},
+},
+	{
 		name: "[Gen 7] Unrated Random Battle",
 
 		mod: 'gen7',
