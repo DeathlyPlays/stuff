@@ -38,16 +38,16 @@ exports.Formats = [
 	//now for boosts
 	onBoost: function (pokemon) {
 		if (pokemon.positiveBoosts(spa)) {
-			pokemon.positiveBoosts(spd) = pokemon.positiveBoosts(spa);
+			pokemon.positiveBoosts(spd) === pokemon.positiveBoosts(spa);
 		}
 		if (pokemon.negativeBoosts(spa)) {
-			pokemon.negativeBoosts(spd) = pokemon.negativeBoosts(spa);
+			pokemon.negativeBoosts(spd) === pokemon.negativeBoosts(spa);
 		}
 		if (pokemon.positiveBoosts(spd)) {
-			pokemon.positiveBoosts(spa) = pokemon.positiveBoosts(spd);
+			pokemon.positiveBoosts(spa) === pokemon.positiveBoosts(spd);
 		}
 		if (pokemon.negativeBoosts(spa)) {
-			pokemon.negativeBoosts(spa) = pokemon.negativeBoosts(spd);
+			pokemon.negativeBoosts(spa) === pokemon.negativeBoosts(spd);
 		}
 	},
 },
